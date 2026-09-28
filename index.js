@@ -24,6 +24,10 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log('listening on *:3000');
+// ESKİ HALİ: server.listen(3000, () => { ... })
+// YENİ HALİ (Bunu yapıştır babacan):
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
+
